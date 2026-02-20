@@ -14,14 +14,18 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import {Link, useNavigate} from "react-router-dom";
 
 const Header = () => {
+
   const [mobileOpen, setMobileOpen] = useState(false);
+  const Navigater = useNavigate();
 
   const navItems = [
-    { label: "Products", href: "#products" },
-    { label: "Travel", href: "#travel" },
-    { label: "Book", href: "#book" },
+    {label: "Home", onclick: () => Navigater("/") },
+    { label: "Products", onclick:() => Navigater("/products")},
+    { label: "Travel", onclick:() => Navigator("/travel")},
+    { label: "Book", onclick:() => Navigater("/book")},
   ];
 
   const handleDrawerToggle = () => {
@@ -65,7 +69,7 @@ const Header = () => {
             fontFamily: "Krona One",
           }}
         >
-          Shophere...
+          Traveller’s Hub
         </Typography>
         <IconButton
           onClick={handleDrawerToggle}
@@ -79,39 +83,40 @@ const Header = () => {
           <CloseIcon />
         </IconButton>
       </Box>
-
-      <List sx={{ pt: 2 }}>
-        {navItems.map((item) => (
-          <ListItem key={item.label} disablePadding>
-            <ListItemButton
-              onClick={() => handleNavClick(item.href)}
-              sx={{
-                py: 1.5,
-                px: 3,
-                "&:hover": {
-                  bgcolor: "rgba(74, 144, 226, 0.15)",
-                  "& .MuiListItemText-primary": {
-                    color: "#4a90e2",
-                  },
-                },
-              }}
-            >
-              <ListItemText
-                primary={item.label}
-                primaryTypographyProps={{
-                  sx: {
-                    color: "#000",
-                    fontSize: "1.1rem",
-                    fontWeight: 500,
-                    fontFamily: "Poppins",
-                    transition: "color 0.2s ease",
+      
+        <List sx={{ pt: 2 }}>
+          {navItems.map((item) => (
+            <ListItem key={item.label} disablePadding>
+              <ListItemButton
+                onClick={() => handleNavClick(item.href)}
+                sx={{
+                  py: 1.5,
+                  px: 3,
+                  "&:hover": {
+                    bgcolor: "rgba(74, 144, 226, 0.15)",
+                    "& .MuiListItemText-primary": {
+                      color: "#4a90e2",
+                    },
                   },
                 }}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+              >
+                <ListItemText
+                  primary={item.label}
+                  primaryTypographyProps={{
+                    sx: {
+                      color: "#000",
+                      fontSize: "1.1rem",
+                      fontWeight: 500,
+                      fontFamily: "Poppins",
+                      transition: "color 0.2s ease",
+                    },
+                  }}
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      
     </Box>
           
 

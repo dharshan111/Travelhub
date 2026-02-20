@@ -6,25 +6,21 @@ import Travelplace from "./components/Travelplace";
 import Product from "./components/Product";
 import Book from "./components/Book";
 import Contact from "./components/Contact";
+import Booknow from "./pages/Booknow";
+
 function App() {
   return (
     <>
-      <Container sx={{padding:"12px",}}>
-     
+      <Container sx={{ padding: "12px" }}>
         <Header />
+          <Hero />
+          <Product />
+          <Travelplace />
+          <Book />
+          {/* <Contact /> */}
 
-        <Hero />
-        <section id="products">
-        <Product />
-        </section>
-        <section id="travel">
-        <Travelplace />
-        </section>
-        <section id="book">
-        <Book />
-        </section>
-        {/* <Contact /> */}
       </Container>
+      {/* <Booknow /> */}
     </>
   );
 }

@@ -36,6 +36,7 @@ const Book = () => {
     }
   }));
 
+    
   return (
     <Box sx={{ 
       pb: 8
@@ -269,13 +270,13 @@ const Book = () => {
                     mt: 3,
                     flexDirection: { xs: 'column', sm: 'row' }
                   }}>
-                    <Button
+                    <Button 
                       variant="contained"
                       size="large"
                       startIcon={<FlightTakeoffIcon />}
-                      fullWidth
+              
                       sx={{
-                        borderRadius: '50px',
+                        borderRadius: '10px',
                         textTransform: 'none',
                         px: 4,
                         py: 1.5,
@@ -291,11 +292,10 @@ const Book = () => {
                     <Button
                       variant="outlined"
                       size="large"
-                      fullWidth
                       sx={{
-                        borderRadius: '50px',
+                        borderRadius: '10px',
                         textTransform: 'none',
-                        px: 4,
+                        px: 2,
                         py: 1.5,
                         borderColor: '#FF6B6B',
                         color: '#FF6B6B',
@@ -320,7 +320,7 @@ const Book = () => {
             display: 'flex', 
             justifyContent: 'space-around', 
             flexWrap: 'wrap', 
-            flexDirection:{xs:"column", md:"row"},
+            flexDirection:{xs:"column", sm:"row", md:"row"},
             gap: 3 
           }}>
             {[
